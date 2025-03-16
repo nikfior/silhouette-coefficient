@@ -1,6 +1,6 @@
 {
   "name": "silhouette-coefficient",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Javascript implementation that calculates the Silhouette coefficient of a clustering.",
   "type": "module",
   "main": "dist/silhouette.esm.js",
@@ -18,7 +18,8 @@
     "prettier": "prettier --check .",
     "build": "rollup -c",
     "clean": "rimraf dist",
-    "prepublishOnly": "npm run clean && npm run build"
+    "prepublishOnly": "npm run clean && npm run build",
+    "updateVersion": "npm version patch --git-tag-version false"
   },
   "repository": {
     "type": "git",

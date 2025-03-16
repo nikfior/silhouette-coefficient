@@ -9,6 +9,12 @@ Given:
 
 this module returns their silhouette score. It measures how similar a data point is to its own cluster and how dissimilar compared to other clusters, providing insights into the cohesion and separation of clusters.
 
+## Installation
+
+```
+npm install silhouette-coefficient
+```
+
 # Usage
 
 ```javascript
@@ -16,28 +22,41 @@ const silhouette = require("silhouette-coefficient");
 //or
 //import silhouette from "silhouette-coefficient";
 
-// for 1-dimension data points
+// Example 1
+// 1-dimensional data points using default euclidean function
 const vectors = [[-3], [3], [5]];
 const labels = [0, 3, 3];
 console.log(silhouette(vectors, labels));
 // Expected output: 0.47222222222222215
 
-// for 4-dimension data points
+// ----------------
+
+// Example 2
+// 4-dimensional data points using manhattanDistance to calculate distance
 const vectors2 = [
-  [-7.15524373, -7.39001621, 4.77433433, 1.98072512],
-  [-7.39587521, -7.11084292, -1.66752104, 8.17317549],
-  [-2.01567068, 8.28177994, -6.53369301, -6.6933595],
-  [4.50927011, 2.6324358, -6.68023878, -7.32920152],
-  [-5.64317844, -5.82690509, -2.45696938, 8.83488172],
+  [-7.153, -7.391, 4.773, 1.982],
+  [-7.391, -7.112, -1.664, 8.179],
+  [-2.018, 8.284, -6.531, -6.698],
+  [4.501, 2.63, -6.688, -7.322],
+  [-5.644, -5.829, -2.458, 8.832],
 ];
 const labels2 = [1, 1, 0, 2, 1];
-console.log(silhouette(vectors2, labels2));
-// Expected output: 0.4004001770560879
+
+function manhattanDistance(a, b) {
+  let dist = 0;
+  for (let i = 0; i < a.length; i++) {
+    dist += Math.abs(a[i] - b[i]);
+  }
+  return dist;
+}
+
+console.log(silhouette(vectors2, labels2, manhattanDistance));
+// Expected output: 0.4242836826891837
 ```
 
 # Parameters
 
-**silhouetteCoefficient(vectors, labels, distanceFormula)**
+**silhouetteCoefficient(vectors, labels, [distanceFormula])**
 
 - **vectors**: An array of data points, where each data point is represented as an array of coordinates.
 - **labels**: An array indicating the cluster assignment for each data point in vectors.  
