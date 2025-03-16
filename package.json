@@ -1,6 +1,6 @@
 {
   "name": "silhouette-coefficient",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Javascript implementation that calculates the Silhouette coefficient of a clustering.",
   "type": "module",
   "main": "dist/silhouette.esm.js",
@@ -16,7 +16,9 @@
     "test": "node tests\\test.js",
     "lint": "eslint .",
     "prettier": "prettier --check .",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "clean": "rimraf dist",
+    "prepublishOnly": "npm run clean && npm run build"
   },
   "repository": {
     "type": "git",
@@ -39,6 +41,7 @@
     "eslint-plugin-prettier": "^5.2.3",
     "globals": "^16.0.0",
     "prettier": "^3.5.3",
+    "rimraf": "^6.0.1",
     "rollup": "^4.35.0"
   }
 }
