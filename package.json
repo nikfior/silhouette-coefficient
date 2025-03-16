@@ -1,13 +1,13 @@
 {
   "name": "silhouette-coefficient",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "Javascript implementation that calculates the Silhouette coefficient of a clustering.",
   "type": "module",
   "main": "dist/silhouette.esm.js",
   "module": "dist/silhouette.esm.js",
   "exports": {
     "import": "./dist/silhouette.esm.js",
-    "require": "./dist/silhouette.cjs.js"
+    "require": "./dist/silhouette.cjs"
   },
   "files": [
     "dist"

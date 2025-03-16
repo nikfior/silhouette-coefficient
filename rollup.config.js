@@ -2,7 +2,7 @@ export default {
   input: "./src/silhouette.js",
   output: [
     {
-      file: "dist/silhouette.cjs.js",
+      file: "dist/silhouette.cjs",
       format: "cjs",
     },
     {
