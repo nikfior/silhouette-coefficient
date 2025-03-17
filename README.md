@@ -23,7 +23,7 @@ const silhouette = require("silhouette-coefficient");
 //import silhouette from "silhouette-coefficient";
 
 // Example 1
-// 1-dimensional data points using default euclidean function
+// 1-dimensional data points using the default euclidean distance
 const vectors = [[-3], [3], [5]];
 const labels = [0, 3, 3];
 console.log(silhouette(vectors, labels));
@@ -32,7 +32,7 @@ console.log(silhouette(vectors, labels));
 // ----------------
 
 // Example 2
-// 4-dimensional data points using manhattanDistance to calculate distance
+// 4-dimensional data points using manhattanDistance function to calculate distance
 const vectors2 = [
   [-7.153, -7.391, 4.773, 1.982],
   [-7.391, -7.112, -1.664, 8.179],
