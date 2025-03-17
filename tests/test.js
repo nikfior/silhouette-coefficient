@@ -344,6 +344,8 @@ const labels2 = [1, 1, 0, 2, 1, 2, 0, 2, 0, 0, 0, 2, 0, 0, 1, 0, 1, 2, 0, 0];
 // const labels2 = [2, 2, 1, 3, 2, 3, 1, 3, 1, 1, 1, 3, 1, 1, 2, 1, 2, 3, 1, 1, 1];
 
 console.log(silhouetteCoefficient(data2, labels2));
+// console.log(silhouetteCoefficient([[-3, 8], [3], [5]], [0, 1, 1]));
+
 // console.log(silhouetteCoefficient([[-3], [3], [5]], [0, 3, 3]));
 // console.log(
 //   silhouetteCoefficient(

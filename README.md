@@ -65,3 +65,4 @@ console.log(silhouette(vectors2, labels2, manhattanDistance));
   If not provided, it will use Euclidean distance.
 
 The function returns the silhouette score which ranges from -1 to 1, where a higher value indicates better-defined clusters.
+It can also return NaN if the input data points contain non-numeric values as coordinates.

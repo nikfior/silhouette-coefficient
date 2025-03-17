@@ -47,7 +47,11 @@ export default function silhouetteCoefficient(vectors, labels, distanceFormula) 
     throw new Error("The number of clusters must be more than one.");
   }
 
+  const dataPointDimension = vectors[0].length;
   for (let i = 0; i < vectors.length; i++) {
+    if (dataPointDimension != vectors[i].length) {
+      throw new Error("Data points must all be of the same dimensions");
+    }
     clusters[labels[i]].push(vectors[i]);
   }
   // --------------------------
